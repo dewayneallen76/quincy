@@ -8,7 +8,7 @@
 </head>
 <body>
   <form method="POST"action="https://requestb.in/1bds0fv1">
-    <label for="username">Username</label>
+    <label for="email">Email</label>
     <input type="text" name="username" id="username">
     <br>
     <label for="password">Password</label>
@@ -17,7 +17,11 @@
     <textarea name="bio" rows="8" cols="80" placeholder="Tell us about yourself"></textarea>
     <br>
     <h3>How did you hear about us?</h3>
-      
+      <input type="radio" name="heard_about" value="billboard">Billboard<br>
+      <input type="radio" name="heard_about" value="radio_advertisement">Radio Advertisement<br>
+      <input type="radio" name="heard_about" value="internet_advertisement">Internet Advertisement <br>
+      <input type="radio" name="heard_about" value="other">Other<br>
+
 
     <input type="submit">
 
