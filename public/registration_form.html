@@ -8,35 +8,38 @@
   <title>Register With Us</title>
 </head>
 <body>
-  <form method="POST"action="https://requestb.in/1bds0fv1">
-    <div class="form-group container">
-      <label for="email">Email</label>
-      <input type="text" name="username" id="username">
-      <br>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password">
-      <br>
-      <textarea name="bio" rows="8" cols="80" placeholder="Tell us about yourself"></textarea>
-      <br>
-      <h4>How did you hear about us?</h4>
-        <input type="radio" name="heard_about" value="billboard"> Billboard<br>
-        <input type="radio" name="heard_about" value="radio_advertisement"> Radio Advertisement<br>
-        <input type="radio" name="heard_about" value="internet_advertisement"> Internet Advertisement <br>
-        <input type="radio" name="heard_about" value="other"> Other
+  <div class="container">
+    <h1>Registration Form</h1>
+    <form method="POST"action="https://requestb.in/1bds0fv1">
+      <div class="form-group container">
+        <label for="email">Email</label>
+        <input type="text" name="username" id="username">
         <br>
-      <h4>What operating system are you using?</h4>
-        <select name="operating_system">
-          <option value="MacOS">MacOS</option>
-          <option value="Windows">Windows</option>
-          <option value="Android">Android</option>
-          <option value="Linux">Linux</option>
-          <option value="Other">Other</option>
-        </select>
-      <br>
-      <br>
-      <input class="btn-primary" type="submit">
-    </div>
-  </form>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <textarea name="bio" rows="8" cols="80" placeholder="Tell us about yourself"></textarea>
+        <br>
+        <h4>How did you hear about us?</h4>
+          <input type="radio" name="heard_about" value="billboard"> Billboard<br>
+          <input type="radio" name="heard_about" value="radio_advertisement"> Radio Advertisement<br>
+          <input type="radio" name="heard_about" value="internet_advertisement"> Internet Advertisement <br>
+          <input type="radio" name="heard_about" value="other"> Other
+          <br>
+        <h4>What operating system are you using?</h4>
+          <select name="operating_system">
+            <option value="MacOS">MacOS</option>
+            <option value="Windows">Windows</option>
+            <option value="Android">Android</option>
+            <option value="Linux">Linux</option>
+            <option value="Other">Other</option>
+          </select>
+        <br>
+        <br>
+        <input class="btn-primary" type="submit">
+      </div>
+    </form>
+  </div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
