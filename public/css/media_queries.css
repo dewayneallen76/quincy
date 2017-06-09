@@ -1,9 +1,20 @@
 @media screen and (max-width:500px) {
   img {
-    height: 224px;
-    width: 330px;
+    height: auto;
+    width: 100%;
+    display: block;
+    margin: 0;
   }
+
   li {
-    background-color: gray;
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  h1 {
+    text-align: center;
   }
 }
