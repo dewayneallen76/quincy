@@ -71,3 +71,25 @@ switch(luckyNumber) {
     console.log("You do not get a discount. Your total is $" + total);
     break;
 }
+
+/* Write some JavaScript that uses a confirm dialog to ask the user if they would like to enter a number. If they click 'Ok', prompt the user for a number, then use 3 separate alerts to tell the user:
+
+whether the number is even or odd
+what the number plus 100 is
+if the number is negative or positive
+if what the user enters is not a number, use an alert to tell them that, and do not display any of the above information. */
+
+confirm('Would you like to enter a number?');
+
+if(true) {
+  var userInput = prompt('Please enter a number: ');
+  userInput = parseInt(userInput);
+    if(userInput % 2 == 0) {
+      alert(userInput + ' is even');
+      alert(userInput + ' plus 100 is ' + (userInput + 100));
+    } else {
+      alert(userInput + ' is odd');
+      alert(userInput + ' plus 100 is ' + (userInput + 100));
+    }
+  } else 
+}
