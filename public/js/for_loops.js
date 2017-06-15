@@ -24,6 +24,13 @@ for(var x = 1; x <= 10; x++) {
       break;
   }
 }
+/* Display numbers 1-10 in the following format:
+1
+22
+333
+4444
+...
+0000000000 */
 
 var number;
 var repeatedNumber;
@@ -36,7 +43,7 @@ repeatedNumber = number.repeat(i);
 	console.log(repeatedNumber);
 }
 
-
+// Display numbers from 100 to 5 decrementing by 5
 for(x = 100; x >=5; x-=5) {
   console.log(x);
 }
