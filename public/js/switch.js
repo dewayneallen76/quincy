@@ -38,14 +38,14 @@ switch (color) {
  var flipACoin = Math.floor(Math.random()* 2);
 /* Add an if statement to log a "Buy a car" to the console if the result is 0 and "Buy a house" if the result is 1. */
 
-if(flipACoin == 0) {
+if(flipACoin === 0) {
   console.log('Buy a car');
 } else {
   console.log('Buy a house');
 }
 
 // Could this program be written using a ternary operator?
-flipACoin == 0 ? console.log('Buy a car') : console.log('Buy a House');
+flipACoin === 0 ? console.log('Buy a car') : console.log('Buy a House');
 
 /* Suppose there's a promotion in Walmart, each customer is given a randomly generated "lucky number" between 0 and 6. If your lucky number is 0 you have no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2, discount is 25%, if it's 4, 50%, and if it's 5 you'll get all for free!. Write a JS program that logs to the console how much you will have to pay if your receipt is for $60. Every time you reload your page you should see a different result. Use a switch statement for this exercise. */
 
@@ -82,15 +82,16 @@ if what the user enters is not a number, use an alert to tell them that, and do 
 confirm('Would you like to enter a number?');
 
 if(true) {
-  var userInput = prompt('Please enter a number: ');
-  userInput = parseInt(userInput);
-    if(userInput % 2 == 0) {
-      alert(userInput + ' is even');
-      alert(userInput + ' plus 100 is ' + (userInput + 100));
-    } else {
-      alert(userInput + ' is odd');
-      alert(userInput + ' plus 100 is ' + (userInput + 100));
-    }
-  } else {
+  var userInput = prompt('Enter a number');
+  var userInput = parseInt(userInput);
+  var addHundred = userInput + 100;
+  if(userInput % 2 === 0 ) {
+    alert(userInput + ' is even');
+    alert(userInput + ' plus 100 is' + addHundred);
+  } else if(userInput % 2 != 0){
+    alert(userInput + ' is odd');
+    alert(userInput + ' plus 100 is' + addHundred);
+  } else if(userInput === NaN) {
     alert(userInput + 'is not a number');
+  }
 }
