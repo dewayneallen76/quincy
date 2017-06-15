@@ -91,5 +91,6 @@ if(true) {
       alert(userInput + ' is odd');
       alert(userInput + ' plus 100 is ' + (userInput + 100));
     }
-  } else 
+  } else {
+    alert(userInput + 'is not a number');
 }
