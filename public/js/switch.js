@@ -79,19 +79,26 @@ what the number plus 100 is
 if the number is negative or positive
 if what the user enters is not a number, use an alert to tell them that, and do not display any of the above information. */
 
-confirm('Would you like to enter a number?');
+var proceed = confirm('Would you like to enter a number?');
 
-if(true) {
+if(proceed) {
   var userInput = prompt('Enter a number');
-  var userInput = parseInt(userInput);
-  var addHundred = userInput + 100;
-  if(userInput % 2 === 0 ) {
-    alert(userInput + ' is even');
-    alert(userInput + ' plus 100 is' + addHundred);
-  } else if(userInput % 2 != 0){
-    alert(userInput + ' is odd');
-    alert(userInput + ' plus 100 is' + addHundred);
-  } else if(userInput === NaN) {
-    alert(userInput + 'is not a number');
+  if(isNaN(parseFloat(userInput))) {
+    alert(userInput + ' is not a number')
+  } else {
+    if(userInput % 2 === 0 ) {
+      alert(userInput + ' is even');
+      alert(userInput + ' plus 100 is' + (parseFloat(userInput) +100));
+    } else {
+      alert(userInput + ' is odd');
+      alert(userInput + ' plus 100 is' + (parseFloat(userInput) + 100));
+    }
+    if(userInput < 0) {
+      alert(userInput + ' is positive');
+    } else {
+      alert(userInput + ' is negative');
+    }
   }
+} else {
+  alert("Thank you for not playing");
 }
