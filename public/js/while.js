@@ -24,7 +24,8 @@ do {
 		allCones = allCones - cones
 		console.log(allCones + " are left.")
 	} else {
-		console.log("I do not have enough cones.") };
+		console.log("I do not have enough cones.");
+  }
 }
 while (allCones >= 1)
 	console.log("I have sold all of the cones.");
