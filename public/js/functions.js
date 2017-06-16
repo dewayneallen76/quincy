@@ -62,6 +62,7 @@ console.log(isOdd(random));
  */
 
 function calculateTip(tipPercentage, billTotal) {
+  var tipPercentage = tipPercentage
   var tipAmount = tipPercentage * billTotal;
   tipAmount = tipAmount.toFixed(2);
   return parseFloat(tipAmount);
@@ -75,7 +76,11 @@ console.log(calculateTip(0.20, 46.88));
  * then display the dollar amount they should tip
  */
 
+var userTipAmount = prompt("How much do you want to tip?");
 
+var userBillAmount = prompt("How much was your bill?");
+
+alert("You need to tip this amount: " + calculateTip(userTipAmount, userBillAmount));
 
 
 }());
