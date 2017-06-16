@@ -76,11 +76,11 @@ console.log(calculateTip(0.20, 46.88));
  * then display the dollar amount they should tip
  */
 
-var userTipAmount = prompt("How much do you want to tip?");
+var tipAmount = 0.20;
 
 var userBillAmount = prompt("How much was your bill?");
 
-alert("You need to tip this amount: " + calculateTip(userTipAmount, userBillAmount));
+alert("A 20% tip will be this amount : " + calculateTip(tipAmount, userBillAmount));
 
 
 }());
