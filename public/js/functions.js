@@ -1,3 +1,4 @@
+(function() {
 "use strict";
 
 /**
@@ -8,6 +9,12 @@
  * Example
  *  > sayHello("codeup") // returns "Hello, codeup!"
  */
+
+function sayHello(name) {
+  console.log("Hello, " + name + "!")
+}
+
+sayHello("Dewayne");
 
 /**
  * TODO:
@@ -50,3 +57,5 @@ var random = Math.floor((Math.random() * 100) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+}());
