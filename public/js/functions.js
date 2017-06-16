@@ -76,11 +76,36 @@ console.log(calculateTip(0.20, 46.88));
  * then display the dollar amount they should tip
  */
 
-var tipAmount = 0.20;
+// var tipAmount = 0.20;
+//
+// var userBillAmount = prompt("How much was your bill?");
+//
+// alert("A 20% tip will be this amount : " + calculateTip(tipAmount, userBillAmount));
 
-var userBillAmount = prompt("How much was your bill?");
+/* Write a function called `identity(input)` that takes in an argument called input and returns that input.*/
+function identity(input) {
+  return input;
+}
+console.log(identity(8));
 
-alert("A 20% tip will be this amount : " + calculateTip(tipAmount, userBillAmount));
 
+/* Write a function called `getRandomNumber(min, max)` that returns a random number between min and max values sent to that funciton call. */
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+console.log(getRandomNumber(1,100));
+
+/* Write a function called `first(input)` that returns the first character in the provided string.  */
+function first(input) {
+  return input.charAt(0);
+}
+console.log(first("dewayne"));
+
+/* Write a fuction called `last(input)` that returns the last character of a string */
+function last(input) {
+  var stringLength = input.length;
+  return input.charAt(stringLength - 1);
+}
+console.log(last("dewayne"));
 
 }());
