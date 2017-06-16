@@ -45,6 +45,11 @@ var random = Math.floor((Math.random() * 100) + 1);
  * console.log *outside of the function* to check your work
  */
 
+function isOdd(numberToTest) {
+  return (numberToTest % 2 === 1) ? console.log( numberToTest + " is odd.") : console.log(numberToTest + " is even.");
+}
+
+console.log(isOdd(random));
 /**
  * TODO: Create a function named 'calculateTip' to calculate a tip on a bill at a
  * restaurant
