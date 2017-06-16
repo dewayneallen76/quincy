@@ -1,6 +1,7 @@
 (function() {
 "use strict";
 
+var myNameIs = "Dewayne";
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -22,6 +23,9 @@ sayHello("Dewayne");
  * Store the result of the function call in a variable named 'helloMessage'.
  * console.log 'helloMessage' to check your work
  */
+
+var helloMessage = sayHello(myNameIs);
+console.log(helloMessage);
 
 // Don't modify the following line, it generates a random number between 1 and
 // 100 and stores it in a variable named random
