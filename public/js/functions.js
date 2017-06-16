@@ -83,6 +83,7 @@ console.log(calculateTip(0.20, 46.88));
 // alert("A 20% tip will be this amount : " + calculateTip(tipAmount, userBillAmount));
 
 /* Write a function called `identity(input)` that takes in an argument called input and returns that input.*/
+
 function identity(input) {
   return input;
 }
@@ -90,22 +91,98 @@ console.log(identity(8));
 
 
 /* Write a function called `getRandomNumber(min, max)` that returns a random number between min and max values sent to that funciton call. */
+
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 console.log(getRandomNumber(1,100));
 
 /* Write a function called `first(input)` that returns the first character in the provided string.  */
+
 function first(input) {
   return input.charAt(0);
 }
 console.log(first("dewayne"));
 
 /* Write a fuction called `last(input)` that returns the last character of a string */
+
 function last(input) {
   var stringLength = input.length;
   return input.charAt(stringLength - 1);
 }
 console.log(last("dewayne"));
+
+/* Write a function called `rest(input)` that returns everything but the first character of a string. */
+
+function rest(input) {
+  return input.substring(1);
+}
+console.log(rest("dewayne"));
+
+
+/* Write a function called `reverse(input)` that takes a string and returns it reversed */
+
+function reverse(input) {
+  return input.split('').reverse().join('');
+}
+console.log(reverse("dewayne"));
+
+
+/* Write a function called `isNumeric(input)` that takes an input and returns a boolean if the input is numeric. */
+
+function isNumeric(input) {
+  !isNaN(input) ? console.log(true) : console.log(input);
+}
+console.log(isNumeric("this is the input"));
+
+/* Write a function called `count(input)` that takes in a string and returns the number of characters. */
+
+function count(input) {
+  return input.length;
+}
+console.log(count("Dewayne"));
+
+/* Write a function called `add(a, b)` that returns the sum of a and b */
+
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 4));
+
+
+/* Write a function called `subtract(a, b)` that return the difference between the two inputs. */
+
+function subtract(a, b) {
+  return a - b;
+}
+console.log(subtract(4, 2));
+
+/* Write multiply(a, b) that returns the product */
+
+function multiply(a, b) {
+  return a * b;
+}
+console.log(multiply(5, 3));
+
+/* Write a divide(numerator, denominator) function that returns a divided by b */
+
+function divide(a, b) {
+  (a === 0 || b === 0) ? console.log("can't divide by 0") : console.log(a / b);
+}
+console.log(divide(16 , 4));
+
+/* Write a remainder(number, divisor) function that returns the remainder left over when dividing `number` by the `divisor` */
+
+function remainder(a, b) {
+  return a % b;
+}
+console.log(remainder(5, 3));
+
+/* Write the function `square(a)` that takes in a number and returns the number multiplied by itself. */
+
+function square(a) {
+  return a * a;
+}
+console.log(square(4));
 
 }());
