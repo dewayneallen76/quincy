@@ -42,7 +42,7 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    var discount = 0.35;
+    var discount;
     var finalAmount;
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -53,9 +53,13 @@
 
     shoppers.forEach(function(shopper) {
       if(shopper.amount > 200) {
+        discount = 0.35;
         finalAmount = shopper.amount - (shopper.amount * discount)
+      } else {
+        discount = 0;
+        finalAmount = shopper.amount;
       }
-      console.log(shopper.name + " spent " + shopper.amount + " and received a discount of: " +  discount + "and the new total is " + finalAmount);
+      console.log(shopper.name + " spent " + shopper.amount + " and received a discount of: " +  discount + " and the new total is " + finalAmount);
     });
 
 
