@@ -35,7 +35,7 @@
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
-    console.log(planets.indexOf('Earth'));
+    console.log("The index of Earth is: " + planets.indexOf('Earth'));
 
     console.log('Using splice to remove the planet after "Earth".');
     // TODO: Read the console.log() statement above. Write code to perform the step it describes.
