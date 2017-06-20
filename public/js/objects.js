@@ -59,7 +59,7 @@
         discount = 0;
         finalAmount = shopper.amount;
       }
-      console.log(shopper.name + " spent " + shopper.amount + " and received a discount of: " +  discount + " and the new total is " + finalAmount);
+      console.log(shopper.name + " spent $" + parseFloat(shopper.amount) + " and received a discount of: " +  parseFloat(discount) + " and the new total is: $" + parseFloat(finalAmount));
     });
 
 
