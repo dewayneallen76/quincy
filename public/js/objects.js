@@ -69,43 +69,43 @@
     // Be creative and add at least 5 books to the array
     var books = [
       {
-        "bookNumber" : 1,
-        "title" : "American Gods",
-        "author" : {
-          "firstName" : "Neil",
-          "lastName" : "Gaiman"
+        bookNumber : 1,
+        title : "American Gods",
+        author : {
+          firstName : "Neil",
+          lastName : "Gaiman"
         }
       },
       {
-        "bookNumber" : 2,
-        "title" : "Heart-Shaped Box",
-        "author" : {
-          "firstName" : "Joe",
-          "lastName" : "Hill"
+        bookNumber : 2,
+        title : "Heart-Shaped Box",
+        author : {
+          firstName : "Joe",
+          lastName : "Hill"
         }
       },
       {
-        "bookNumber" : 3,
-        "title" : "Mr. Mercedes",
-        "author" : {
-          "firstName" : "Stephen",
-          "lastName" : "King"
+        bookNumber : 3,
+        title : "Mr. Mercedes",
+        author : {
+          firstName : "Stephen",
+          lastName : "King"
         }
       },
       {
-        "bookNumber" : 4,
-        "title" : "A Game of Thrones",
-        "author" : {
-          "firstName" : "George R.R.",
-          "lastName" : "Martin"
+        bookNumber : 4,
+        title : "A Game of Thrones",
+        author : {
+          firstName : "George R.R.",
+          lastName : "Martin"
         }
       },
       {
-        "bookNumber" : 5,
-        "title" : "The First Quarry",
-        "author" : {
-          "firstName" : "Max Alan",
-          "lastName" : "Collins"
+        bookNumber : 5,
+        title : "The First Quarry",
+        author : {
+          firstName : "Max Alan",
+          lastName : "Collins"
         }
       }
     ];
