@@ -62,6 +62,66 @@
       console.log(shopper.name + " spent $" + parseFloat(shopper.amount) + " and received a discount of: " +  parseFloat(discount) + " and the new total is: $" + parseFloat(finalAmount));
     });
 
+    // todo:
+    // Create an array of objects that represent books.
+    // Each book should have a title and an author property.
+    // The author property should be an object with a firstName and lastName.
+    // Be creative and add at least 5 books to the array
+    var books = [
+      {
+        "bookNumber" : 1,
+        "title" : "American Gods",
+        "author" : {
+          "firstName" : "Neil",
+          "lastName" : "Gaiman"
+        }
+      },
+      {
+        "bookNumber" : 2,
+        "title" : "Heart-Shaped Box",
+        "author" : {
+          "firstName" : "Joe",
+          "lastName" : "Hill"
+        }
+      },
+      {
+        "bookNumber" : 3,
+        "title" : "Mr. Mercedes",
+        "author" : {
+          "firstName" : "Stephen",
+          "lastName" : "King"
+        }
+      },
+      {
+        "bookNumber" : 4,
+        "title" : "A Game of Thrones",
+        "author" : {
+          "firstName" : "George R.R.",
+          "lastName" : "Martin"
+        }
+      },
+      {
+        "bookNumber" : 5,
+        "title" : "The First Quarry",
+        "author" : {
+          "firstName" : "Max Alan",
+          "lastName" : "Collins"
+        }
+      }
+    ];
 
+    // log out the books array
+    console.log(books);
+
+    // todo:
+    // Loop through the array of books using .forEach and print out the specified information about each one.
+    // start loop here
+    books.forEach(function(book) {
+        console.log("Book #" + book.bookNumber);
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    // end loop here
+    });
 
 })();
