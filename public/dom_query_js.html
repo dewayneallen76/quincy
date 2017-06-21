@@ -38,6 +38,7 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         var btn1 = document.getElementById('btn1');
+        // Added event listener to change
         btn1.addEventListener('click', function() {
           mainHeader.innerHTML = 'Javascript is Cool';
         });
@@ -46,6 +47,7 @@
 
         // TODO: Set the text color of subHeader to blue
         var btn3 = document.getElementById('btn3');
+        // Added event listener to change
         btn3.addEventListener('click', function() {
           subHeader.style.color = "blue";
         });
@@ -53,6 +55,7 @@
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
         var btn2 = document.getElementById('btn2')
+        // Added event listener to change
         btn2.addEventListener('click', function() {
           for(var i = 0; i < listItems.length; i++) {
             var dbId = listItems[i].getAttribute('data-dbid');
@@ -75,7 +78,7 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         var btn4 = document.getElementById('btn4');
-
+        // Added event listener to change
         btn4.addEventListener('click', function() {
           subParagraphs[0].innerText = 'Mission Accomplished';
         });
