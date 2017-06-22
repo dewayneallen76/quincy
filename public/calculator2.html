@@ -17,9 +17,9 @@
   <body>
     <div class="container">
       <div class="input">
-        <input type="text" class="leftInput" value="" readonly>
-        <input type="text" class="operatorInput" value="" readonly>
-        <input type="text" class="rightInput" value="" readonly>
+        <input type="text" id="leftInput" value="" readonly>
+        <input type="text" id="operatorInput" value="" readonly>
+        <input type="text" id="rightInput" value="" readonly>
       </div>
       <div class="row1">
         <button type="button" name="button" class="number">1</button>
@@ -40,14 +40,15 @@
         <button type="button" name="button" class="operator">*</button>
       </div>
       <div class="row4">
-        <button type="button" name="button" class="btnClear">C</button>
+        <button type="button" name="button" id="btnClear">C</button>
         <button type="button" name="button" class="number">0</button>
-        <button type="button" name="button" class="btnEquals">=</button>
+        <button type="button" name="button" id="btnEquals">=</button>
         <button type="button" name="button" class="operator">/</button>
       </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/calculator2.js" charset="utf-8"></script>
   </body>
 </html>
