@@ -41,7 +41,7 @@ equals.addEventListener('click',function(e){
 var answer;
 var leftInput = parseFloat(document.getElementById('leftInput').getAttribute('value'));
 var rightInput = parseFloat(document.getElementById('rightInput').getAttribute('value'));
-var operatorInput = document.getElementById('operatorInput').getAttribute('value')s;
+var operatorInput = document.getElementById('operatorInput').getAttribute('value');
 
 switch (document.getElementById('operatorInput').getAttribute('value')) {
 
