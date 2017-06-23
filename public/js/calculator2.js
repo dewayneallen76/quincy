@@ -57,11 +57,11 @@
       case '/':
         if(leftInputNumber === 0 || rightInputNumber === 0) {
           alert('Cannot divide by 0');
+          answer = leftInput.setAttribute('value', '');
         }
         answer = leftInputNumber / rightInputNumber;
         break;
     }
-    console.log(answer);
     leftInput.setAttribute('value', answer);
     rightInput.setAttribute('value', '');
   })
