@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  var myLatlng = { lat: 29.426791, lng: -98.489602 };
   var mapOne = document.getElementById("map");
   var mapOptions = {
     // Set the zoom level
@@ -15,6 +16,13 @@
   };
   var map = new google.maps.Map(mapOne, mapOptions);
 
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    draggable: true,
+    animation: google.maps.Animation.DROP
+  })
+
   // SECOND MAP
   var mapTwoElement = document.getElementById('map_two');
 
@@ -29,6 +37,10 @@
 
      // Check for a successful result
      if (status == google.maps.GeocoderStatus.OK) {
+       var marker = new google.maps.Marker({
+           map: mapTwo,
+           position: results[0].geometry.location
+       });
 
          // Recenter the map over the address
          mapTwo.setCenter(results[0].geometry.location);
@@ -37,6 +49,7 @@
          // Show an error message with the status if our request fails
          alert("Geocoding was not successful - STATUS: " + status);
      }
+    console.log(results,status);
    });
 
    var mapTwo = new google.maps.Map(mapTwoElement, mapOptions);
