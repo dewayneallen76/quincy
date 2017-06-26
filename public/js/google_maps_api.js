@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var mapElement = document.getElementById("map");
+  var mapOne = document.getElementById("map");
   var mapOptions = {
     // Set the zoom level
         zoom: 19,
@@ -13,7 +13,10 @@
 
         mapTypeId: google.maps.MapTypeId.HYBRID
   };
-  var map = new google.maps.Map(mapElement, mapOptions);
+  var map = new google.maps.Map(mapOne, mapOptions);
+
+  // SECOND MAP
+  var mapTwoElement = document.getElementById('map_two');
 
   // Set our address to geocode
   var address = "300 Alamo Plaza, San Antonio, TX, 78205";
@@ -28,7 +31,7 @@
      if (status == google.maps.GeocoderStatus.OK) {
 
          // Recenter the map over the address
-         map.setCenter(results[0].geometry.location);
+         mapTwo.setCenter(results[0].geometry.location);
      } else {
 
          // Show an error message with the status if our request fails
@@ -36,6 +39,6 @@
      }
    });
 
-
+   var mapTwo = new google.maps.Map(mapTwoElement, mapOptions);
 
 }());
