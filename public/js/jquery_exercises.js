@@ -2,9 +2,7 @@
   'use strict';
   console.log('connected');
 
-  $(document).ready(function() {
-    alert( 'The DOM has finished loading!');
-  });
+  $('#main-header').css('color', 'red');
 
-  
+  $('#content').html('removing paragraph and adding this');
 }());
