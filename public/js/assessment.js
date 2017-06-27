@@ -59,12 +59,13 @@ console.log('connected');
   function fiveTo(number) {
     var array = [];
     var count = 5;
-    while (number >= count && count === number) {
-      count = count++;
-    }
-    return count;
+    do {
+      count++;
+      array.push(count);
+    } while(number = array.length);
+    return array;
   }
-  console.log(fiveTo(10));
+  // console.log(fiveTo(10));
 
   /* 6.
   Write a function named upperCaseLastNames that accepts an array of objects where each object has properties firstName and lastName and returns the same array of objects with each last name capitalized.
