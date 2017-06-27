@@ -2,13 +2,19 @@
   'use strict';
   console.log('connected');
 
-  $('#main-header').css('color', 'red');
-
-  $('#content').html('removing paragraph and adding this');
-
-  $('#codeup').click(function() {
-    alert('h1 with id codeup was clicked');
+  $('h1').click(function() {
+    $(this).css('background-color', 'yellow');
   });
 
-  
+  $('p').dblclick(function() {
+    $(this).css('font-size', '18px');
+  });
+
+  $('li').hover(
+    function() {
+      $(this).css('color', 'red');
+    },
+    function() {
+      $(this).css('color', 'black');
+    });
 }());
