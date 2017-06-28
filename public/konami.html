@@ -6,13 +6,23 @@
 <body>
     <h1>Konami Code</h1>
 
-    <script src="/js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script>
         "use strict";
 
-        $(document).keyup(function(event){
-            console.log(event.keyCode);
-        });
+        var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+        var input = [];
+
+        $(document).keyup(function(event) {
+          input.push(event.keyCode);
+          if (input.length > konamiCode.length) {
+            input.shift();
+          }
+          if (input.toString() == konamiCode.toString()) {
+            alert('You get 30 Extra Lives');
+          }
+	      });
+
     </script>
 </body>
 </html>
