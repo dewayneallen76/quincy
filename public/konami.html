@@ -12,16 +12,32 @@
 
         var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
         var input = [];
+        var i = 0;
+        // ORIGIANL CODE, GIVE ALERT ANYTIME THE CODE IS ENTERED
 
-        $(document).keyup(function(event) {
-          input.push(event.keyCode);
-          if (input.length > konamiCode.length) {
-            input.shift();
+        // $(document).keyup(function(event) {
+        //   input.push(event.keyCode);
+        //   if (input.length > konamiCode.length) {
+        //     input.shift();
+        //   }
+        //   else if (input.toString() == konamiCode.toString()) {
+        //     alert('You get 30 Extra Lives');
+        //   }
+        // });
+
+        // REFACTORED TO VERITY THE KEYCODE ENTERED MATCHES THE INDEX, GIVES ERROR MESSAGE WHEN THE CODE IS ENTERED INCORRECTLY
+        $(document).keyup(function(e) {
+          if(e.keyCode == konamiCode[i]) {
+            i++;
+          } else {
+            i = 0;
+            alert("Wrong! Try again");
           }
-          if (input.toString() == konamiCode.toString()) {
-            alert('You get 30 Extra Lives');
+          if (i == 11) {
+            alert("Correct code entered!");
+            i = 0;
           }
-	      });
+        });
 
     </script>
 </body>
