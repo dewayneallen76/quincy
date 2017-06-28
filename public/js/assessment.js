@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  
+
   /* 1.
   Write a function named isNegative that accepts a number and returns true or false based on whether the input is negative.
   */
@@ -11,7 +11,7 @@
       return false;
     }
   }
-  isNegative(-21);
+  console.log(isNegative(-21));
 
   /* 2.
   Write a function named average that accepts an array of numbers and returns the average of those numbers
@@ -23,7 +23,7 @@
     }
     return total / array.length;
   }
-  average([1,2,3]);
+  console.log(average([1,2,3]));
 
   /* 3.
   Write a function named countOdds that accepts an array of numbers and returns the number of odd numbers in the array.
@@ -37,7 +37,7 @@
     }
     return total;
   }
-  countOdds([1, 2, 1, 1]);
+  console.log(countOdds([1, 2, 1, 1]));
 
   /* 4.
   Write a function named convertNameToObject that accepts a string that contains a first name and last name separated by a space, and returns an object with properties firstName and lastName.
@@ -50,7 +50,7 @@
     };
     return nameObject;
   }
-  convertNameToObject('Harry Potter');
+  console.log(convertNameToObject('Harry Potter'));
 
   /* 5.
   Write a function named fiveTo that accepts a number and returns an array of the integers from 5 up to (but not including) the passed number.
@@ -64,9 +64,10 @@
       return array;
     } else {
       console.log('number must be greater than 5');
+      return number;
     }
   }
-  fiveTo(15);
+  console.log(fiveTo(20));
 
   /* 6.
   Write a function named upperCaseLastNames that accepts an array of objects where each object has properties firstName and lastName and returns the same array of objects with each last name capitalized.
@@ -83,6 +84,6 @@
     });
     return names;
   }
-  upperCaseLastNames(names);
+  console.log(upperCaseLastNames(names));
 
 }());
