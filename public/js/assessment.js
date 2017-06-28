@@ -80,7 +80,7 @@
 
   function upperCaseLastNames(names) {
     names.forEach(function(name) {
-      name.lastName = name.lastName.toUpperCase();
+      name.lastName = name.lastName.charAt(0).toUpperCase() + name.lastName.slice(1);
     });
     return names;
   }
