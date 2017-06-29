@@ -23,6 +23,7 @@
 
     $('h3').click(function(event) {
       $(this).next().children().css('font-weight', 'bold');
+      $(this).next().toggle();
     });
 
     $('ul').click(function(event) {
@@ -32,6 +33,14 @@
     $('.hide-signup').click(function(event) {
       $('.newsletter').hide();
     });
+
+    setTimeout(function () {
+      $('#register').fadeIn(5000, function() {
+        $('span').fadeIn();
+      });
+    }, 8000);
+
+
 
   });
 
