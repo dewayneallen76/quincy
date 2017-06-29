@@ -34,14 +34,10 @@
       $('.newsletter').hide();
     });
 
-    setTimeout(function () {
-      $('#register').fadeIn(5000, function() {
-        $('span').fadeIn();
-      });
-    }, 8000);
-
-
-
+    $('#register').fadeIn(8000, function() {
+      $('span').fadeIn();
+    });
+    
   });
 
 }());
