@@ -29,6 +29,10 @@
       $(this).children('li').first().css('color', 'blue');
     });
 
+    $('.hide-signup').click(function(event) {
+      $('.newsletter').hide();
+    });
+
   });
 
 }());
