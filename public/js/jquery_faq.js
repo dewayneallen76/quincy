@@ -3,7 +3,7 @@
   console.log('connected');
 
   $(document).ready(function() {
-
+    // Attributes and CSS lesson
     $('#make-invisible').click(function(event) {
       event.preventDefault();
       $('dd').toggleClass('invisible');
@@ -14,6 +14,7 @@
       $(this).toggleClass('highlighted');
     });
 
+    // Traversing lesson
     $('button').click(function(event) {
       $('ul').each(function(index) {
         $(this).children('li').last().css('background-color', '#FF0');
@@ -24,8 +25,8 @@
       $(this).next().children().css('font-weight', 'bold');
     });
 
-    $('li').click(function(event) {
-      $(this).first().css('color', 'blue');
+    $('ul').click(function(event) {
+      $(this).children('li').first().css('color', 'blue');
     });
 
   });
