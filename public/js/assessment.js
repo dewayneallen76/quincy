@@ -86,4 +86,17 @@
   }
   console.log(upperCaseLastNames(names));
 
+  /* 7.
+  Create a function called addOne that takes an array of numbers and returns an array of the same numbers incremented by one.
+  */
+  var numbers = [1, 2, 3] // should return [2, 3, 4]
+
+  function addOne(numberArray) {
+    var outputArray = [];
+    for (var i = 0; i < numberArray.length; i++) {
+      outputArray.push(numberArray[i] + 1);
+    }
+    return outputArray;
+  }
+  console.log(addOne(numbers));
 }());
