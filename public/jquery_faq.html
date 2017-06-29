@@ -4,27 +4,50 @@
     <meta charset="utf-8">
     <title>Jquery FAQ</title>
     <style>
-        .centered {
-            text-align: center;
+        .invisible {
+          display: none;
         }
         .highlighted {
-            background-color: #FF0;
+          background-color: yellow;
         }
     </style>
   </head>
   <body>
-    <h1 id="codeup">Hello Codeup</h1>
-    <h1>Example Page</h1>
-    <div class="centered important highlighted">
-        <h3>NOTICE</h3>
-        <p>This is an important message!</p>
-    </div>
-    <div class="not-important">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, incididunt ut <span class="important highlighted">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
-    </div>
-    <p class="centered important highlighted">This is also very important.</p>
-    <a href="#" id="highlight-important">Click to toggle the highlighting of important text.</a>
+    <h1>National Park FAQ</h1>
+    <dl>
+  		<dt>What government agency oversees the National Park Service?</dt>
+  		<dd class="invisible">The National Park Service is a bureau of the Department of the Interior</dd>
+  		<br>
+  		<dt>How many employees are in the National Park Service?</dt>
+  		<dd class="invisible">It has approximately 22,000 permenant, temporary or seasonal employess, and over 200,000 volunteers.</dd>
+  		<br>
+  		<dt>How old is the National Park System?</dt>
+  		<dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an Act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park.</dd>
+  		<br>
+  		<dt>What is the origin of the National Park Service arrowhead?</dt>
+  		<dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</dd>
+  		<br>
+  		<dt>How many areas are in the National Park System?</dt>
+  		<dd class="invisible">The system includes 412 areas covering more than 84 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments, battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas, scenic rivers and trails, and the White House.</dd>
+  		<br>
+  		<dt>What is the largest national park site? Smallest?</dt>
+  		<dd class="invisible">Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres. Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
+  		<br>
+  		<dt>How many people visit the national parks?</dt>
+  		<dd class="invisible">Total recreation visitors to the national parks in 2015: 307,247,252</dd>
+  		<br>
+  		<dt>How do I obtain a park pass?</dt>
+  		<dd class="invisible">You can obtain park passes by visiting your nearest park site. Most sites have passes available; we recommend calling a park prior to your visit.</dd>
+  		<br>
+  		<dt>Where can I find a park map?</dt>
+  		<dd class="invisible">You can view maps on specific park websites.</dd>
+  		<br>
+  		<dt>What do I need to know about driving off road in national parks?</dt>
+  		<dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+  		<br>
+  	</dl>
+
+    <a href="#" id="make-invisible">Click to toggle the information.</a>
 
     <script src="js/jquery.js" charset="utf-8"></script>
     <script src="js/jquery_faq.js" charset="utf-8"></script>
