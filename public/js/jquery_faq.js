@@ -37,7 +37,7 @@
     $('#register').fadeIn(8000, function() {
       $('span').fadeIn();
     });
-    
+
   });
 
 }());
