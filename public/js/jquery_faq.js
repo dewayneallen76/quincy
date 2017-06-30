@@ -23,20 +23,24 @@
 
     $('h3').click(function(event) {
       $(this).next().children().css('font-weight', 'bold');
-      $(this).next().toggle();
     });
 
     $('ul').click(function(event) {
       $(this).children('li').first().css('color', 'blue');
     });
 
-    $('.hide-signup').click(function(event) {
-      $('.newsletter').hide();
+    // Show, hide, toggle lesson
+    $('span').click(function(event) {
+      $(this).parent().hide();
     });
 
-    $('#register').fadeIn(8000, function() {
-      $('span').fadeIn();
-    });
+    $('h3').click(function(e) {
+      $(this).next().slideToggle();
+    })
+
+    $('#register').hide().delay(8000).fadeIn();
+
+
 
   });
 
