@@ -49,7 +49,7 @@
 
         $('#btn-scale').click(function() {
           $('#animate-box').animate({
-            width: "+=375px"
+            width: "+=50%"
           }, 1000);
         })
 
@@ -87,12 +87,14 @@
         $("#btn-right").click(function() {
            $('#animate-box').animate({
                height: "50px",
-               width: "200px",
+               width: "50px",
                left: "+=100px",
-           }, 500).animate({
+               borderRadius: "50px"
+           }, 800).animate({
                height: "250px",
                width: "250px",
-               left: "+=100px"
+               left: "+=100px",
+               borderRadius: "0px"
            });
          })
     });
