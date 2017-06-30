@@ -2,11 +2,22 @@
   'use strict';
   console.log('connected');
   /*
-  Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+  Write a function to get a string to have the following output:
+  accum("abcd");    // "A-Bb-Ccc-Dddd"
+  accum("RqaEzty"); // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+  accum("cwAt");    // "C-Ww-Aaa-Tttt"
   */
-  function solution(string) {
-  
+
+  function mumble(string) {
+    var array = [];
+    for(var i = 0; i < string.length; i++) {
+      var characterArray = string.charAt(i).repeat(i + 1).toUpperCase(i - 1).split(" ");
+      array += characterArray;
+    }
+    console.log(array);
   }
 
-  console.log(solution('abcd'));
+  console.log(mumble("abcd"));
+
+
 }());
