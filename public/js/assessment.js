@@ -63,8 +63,7 @@
       }
       return array;
     } else {
-      console.log('number must be greater than 5');
-      return number;
+      return array = [5];
     }
   }
   console.log(fiveTo(20));
