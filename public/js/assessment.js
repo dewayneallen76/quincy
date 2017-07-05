@@ -1,4 +1,4 @@
-(function() {
+
   'use strict';
 
   /* 1.
@@ -99,4 +99,3 @@
     return outputArray;
   }
   console.log(addOne(numbers));
-}());
