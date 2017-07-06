@@ -51,10 +51,10 @@
 
         // create a function makeRequest() that makes a GET request to the dogs.json file.
         // In the .done method, console.log the returned value of isOldDog(data).
+        var url = 'data/dogs.json';
+        var request = $.get(url);
 
         function makeRequest(url) {
-          var url = 'data/dogs.json';
-          var request = $.get(url);
           request.done(function(data) {
             console.log(isOldDog(data));
           }).fail(function(jqXhr, status, error) {
