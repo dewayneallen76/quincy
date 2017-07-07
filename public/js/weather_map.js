@@ -2,20 +2,21 @@
   'use strict';
   console.log('connected');
 
-  const apiKey = "9045f328001b8cd61b813c19463bd371";
-  var url = "http://api.openweathermap.org/data/2.5/forecast/daily";
-  var lat = "29.423017";
-  var lon = "-98.48527";
-
-/* function to make the call to the open weather API */
-  function getWeather() {
-    $.get(url, {
+  const apiKey = "9045f328001b8cd61b813c19463bd371"; // constant for API key
+  var url = "http://api.openweathermap.org/data/2.5/forecast/daily"; // url for openweathermap daily forcast
+  var lat = "29.423017"; // san antonio latitude
+  var lon = "-98.48527"; // san antonio longitude
+  var weatherOptions = { // weather options used in the get function
       APPID: apiKey,
       lat: lat,
       lon: lon,
       cnt: "3",
       units: "imperial"
-    }).done(function(data){
+  };
+
+/* function to make the call to the open weather API */
+  function getWeather() {
+    $.get(url, weatherOptions).done(function(data){
         displayWeather(data);
     }).fail(function(status, error) {
         console.log(status);
@@ -33,7 +34,7 @@
     weather.list.forEach(function(weather) {
       var date = new Date(weather.dt * 1000);
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-      var dayOfWeek = days[date.getDay()]
+      var dayOfWeek = days[date.getDay()];
 
         content += "<div class='col-lg-4 day'>";
         content += "<h3>" + dayOfWeek + "</h3>" + "<br>";
@@ -74,6 +75,12 @@
     title: "Move me!"
   });
 
-
+// Added listener to marker to update weatherOtions latitude and longitude, clear the current weather forecast and call to getWeather function to update the page with the forecast for the location where the marker was dropped. 
+  google.maps.event.addListener(marker, 'dragend', function(e) {
+    weatherOptions.lat = this.getPosition().lat();
+    weatherOptions.lon = this.getPosition().lng();
+    $('#forecastDiv').html("");
+    getWeather();
+  })
 
 }());
