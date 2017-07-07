@@ -57,16 +57,19 @@
 // Map options for google maps api
   var mapOptions = {
     // Set the zoom level
-        zoom: 4,
+        zoom: 10,
 
         // This sets the center of the map at our location
         center: {
-            lat:  39.8283,
-            lng: -98.489602
+            lat:  29.423017,
+            lng: -98.48527
         }
   };
 // Render google map on the page
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+// Create draggable marker that can be used with forecast functions
+
 
 
 
