@@ -48,11 +48,10 @@
     $('#forecastDiv').append(content);
   }
 
-
+// Function called to connect to openweathermap and display information
   getWeather();
 
-  // var googleMaps = document.getElementById('#map-canvas');
-
+// Map options for google maps api
   var mapOptions = {
     // Set the zoom level
         zoom: 4,
@@ -63,7 +62,7 @@
             lng: -98.489602
         }
   };
-
+// Render google map on the page 
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 
