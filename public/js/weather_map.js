@@ -37,11 +37,11 @@
 
         content += "<div class='col-lg-4 day'>";
         content += "<h3>" + dayOfWeek + "</h3>" + "<br>";
-        content += "<h4>" + Math.round(weather.temp.min) + "&deg" + "/" + Math.round(weather.temp.max) + "&deg" + "</h4>" + "<br>";
+        content += "<h3>" + Math.round(weather.temp.min) + "&deg" + "/" + Math.round(weather.temp.max) + "&deg" + "</h3>" + "<br>";
         content += "<img src='http://openweathermap.org/img/w/" + weather.weather[0].icon +".png'>" + "<br>";
-        content += "<strong>" + weather.weather[0].main + "</strong>"+ ": " + weather.weather[0].description + "</br>";
-        content += "<strong>Humidity: </strong>" + weather.humidity + "</br>";
-        content += "<strong>Pressure: </strong>" + weather.pressure;
+        content += "<h4><strong>" + weather.weather[0].main + "</strong>"+ ": " + weather.weather[0].description + "</h4></br>";
+        content += "<h4><strong>Humidity: </strong>" + weather.humidity + "</h4><br>";
+        content += "<h4><strong>Pressure: </strong>" + weather.pressure + "</h4><br>";
         content += "</div>" /* closes column */
 
     });
