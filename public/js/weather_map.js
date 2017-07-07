@@ -17,6 +17,9 @@
       units: "imperial"
     }).done(function(data){
         displayWeather(data);
+    }).fail(function(status, error) {
+        console.log(status);
+        console.log(error);
     });
   }
 
@@ -62,7 +65,7 @@
             lng: -98.489602
         }
   };
-// Render google map on the page 
+// Render google map on the page
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 
