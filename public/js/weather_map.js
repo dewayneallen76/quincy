@@ -36,7 +36,7 @@
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       var dayOfWeek = days[date.getDay()];
 
-        content += "<div class='col-lg-4 day'>";
+        content += "<div class='col-sm-4 day'>";
         content += "<h3>" + dayOfWeek + "</h3>" + "<br>";
         content += "<h3>" + Math.round(weather.temp.min) + "&deg" + "/" + Math.round(weather.temp.max) + "&deg" + "</h3>" + "<br>";
         content += "<img src='http://openweathermap.org/img/w/" + weather.weather[0].icon +".png'>" + "<br>";
@@ -52,12 +52,29 @@
     $('#forecastDiv').append(content);
   }
 
-// Click event to display 6 day forecast for location selected 
-  $("#sixDayForecast").click(function(e) {
-    weatherOptions.cnt = $("#sixDayForecast").val();
+// Click event to display today's forecast for location selected
+  $("#oneDayForecast").click(function(e) {
+    weatherOptions.cnt = $("#oneDayForecast").val();
     $("#forecastDiv").html("");
     getWeather();
   });
+
+// Click event to display the 3 day forecast for the location selected
+  $("#threeDayForecast").click(function(e) {
+      weatherOptions.cnt = $("#threeDayForecast").val();
+      $("#forecastDiv").html("");
+      getWeather();
+  });
+
+// Click event to display the 6 day forecast for the location selected
+  $("#sixDayForecast").click(function(e) {
+      weatherOptions.cnt = $("#sixDayForecast").val();
+      $("#forecastDiv").html("");
+      getWeather();
+  });
+
+
+
 
 // Function called to connect to openweathermap and display information
   getWeather();
