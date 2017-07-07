@@ -52,9 +52,10 @@
     $('#forecastDiv').append(content);
   }
 
+// Click event to display 6 day forecast for location selected 
   $("#sixDayForecast").click(function(e) {
     weatherOptions.cnt = $("#sixDayForecast").val();
-    $("#forecastDiv").html(""); 
+    $("#forecastDiv").html("");
     getWeather();
   });
 
