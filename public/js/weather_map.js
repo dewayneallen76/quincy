@@ -55,21 +55,24 @@
   getWeather();
 
 // Map options for google maps api
+  var markerLocation = { lat: 29.423017, lng: -98.48527 }
   var mapOptions = {
     // Set the zoom level
         zoom: 10,
 
         // This sets the center of the map at our location
-        center: {
-            lat:  29.423017,
-            lng: -98.48527
-        }
+        center: markerLocation
   };
 // Render google map on the page
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 // Create draggable marker that can be used with forecast functions
-
+  var marker = new google.maps.Marker({
+    position: markerLocation,
+    map: map,
+    draggable: true,
+    title: "Move me!"
+  });
 
 
 
