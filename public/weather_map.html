@@ -19,9 +19,9 @@
       .day {
         border: 1px solid black;
       }
-      .googleMap {
-        height: 700px;
-        width: 900px;
+      #map-canvas {
+        height: 600px;
+        width: 1150px;
         border: 1px solid black;
         margin-top: 10px;
       }
@@ -33,9 +33,10 @@
       <div id="forecastDiv"></div>
     </div>
     <div class="container">
-      <div class="googleMap" id="map"></div>
+      <div id="map-canvas"></div>
     </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkCj00LMWDW31BKj_1KiGuFSjOK46UQ5I"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/weather_map.js" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
