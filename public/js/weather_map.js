@@ -102,6 +102,7 @@
 // Added listener to marker to update weatherOtions latitude and longitude, clear the current weather forecast and call to getWeather function to update the page with the forecast for the location where the marker was dropped.
   google.maps.event.addListener(marker, 'dragend', function(e) {
     weatherOptions.lat = this.getPosition().lat();
+    console.log(this.getPosition().lat());
     weatherOptions.lon = this.getPosition().lng();
     $('#forecastDiv').html("");
     getWeather();
