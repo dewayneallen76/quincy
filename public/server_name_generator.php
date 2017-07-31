@@ -1,16 +1,16 @@
 <?php
+function randomNameGenerator($array1, $array2) {
+  $random = mt_rand(0, 9);
+  $randomArray1 = $array1[$random];
+  $randomArray2 = $array2[$random];
+  return $randomArray1 . ' ' . $randomArray2;
+};
 
 function pageController() {
 
   $nouns = ['dog', 'cat', 'car', 'tugboat', 'building', 'snake', 'tree', 'zombie', 'hobbit', 'nerfherder'];
   $adjectives = ['funky', 'tiny', 'fresh', 'dank', 'happy', 'gigantic', 'stanky', 'hungry', 'honorable', 'fantastic'];
 
-  function randomNameGenerator($array1, $array2) {
-    $random = mt_rand(0, 9);
-    $randomArray1 = $array1[$random];
-    $randomArray2 = $array2[$random];
-    return $randomArray1 . ' ' . $randomArray2;
-  };
   return [
     'serverName' => randomNameGenerator($adjectives, $nouns)
   ];
