@@ -31,7 +31,6 @@ $favoriteThings = ['family', 'coding', 'wings', 'rugby', 'music'];
          <?php foreach($favoriteThings as $thing) { ?>
            <tr>
            <td><?php echo $thing; ?></td>
-
            </tr>
          <?php } ?>
        </tbody>
