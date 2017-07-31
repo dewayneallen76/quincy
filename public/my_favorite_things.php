@@ -1,7 +1,11 @@
 <?php
+function pageController() {
+  $favoriteThings = [];
+  $favoriteThings['things'] = ['family', 'coding', 'wings', 'rugby', 'music'];
+  return $favoriteThings;
+}
 
-$favoriteThings = ['family', 'coding', 'wings', 'rugby', 'music'];
-
+extract(pageController());
  ?>
 
 
@@ -28,9 +32,9 @@ $favoriteThings = ['family', 'coding', 'wings', 'rugby', 'music'];
          <h1>My favorite things</h1>
        </thead>
        <tbody>
-         <?php foreach($favoriteThings as $thing) { ?>
+         <?php foreach($things as $thing) { ?>
            <tr>
-           <td><?php echo $thing; ?></td>
+           <td><?= $thing; ?></td>
            </tr>
          <?php } ?>
        </tbody>
