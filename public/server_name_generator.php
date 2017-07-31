@@ -3,9 +3,11 @@
 $nouns = ['dog', 'cat', 'car', 'tugboat', 'building', 'snake', 'tree', 'zombie', 'hobbit', 'nerfherder'];
 $adjectives = ['funky', 'tiny', 'fresh', 'dank', 'happy', 'gigantic', 'stanky', 'hungry', 'honorable', 'fantastic'];
 
-function randomNameGenerator($array) {
+function randomNameGenerator($array1, $array2) {
   $random = mt_rand(0, 9);
-  return $array[$random];
+  $randomArray1 = $array1[$random];
+  $randomArray2 = $array2[$random];
+  return $randomArray1 . ' ' . $randomArray2;
 }
 
 
@@ -29,7 +31,7 @@ function randomNameGenerator($array) {
    </head>
    <body>
      <h1 class="text-center">Server Name Generator</h1>
-     <h1 class="text-center"><?php echo randomNameGenerator($adjectives) . ' ' . randomNameGenerator($nouns); ?></h1>
+     <h1 class="text-center"><?php echo randomNameGenerator($adjectives, $nouns); ?></h1>
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
