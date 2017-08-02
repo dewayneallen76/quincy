@@ -21,6 +21,12 @@ function pageController() {
       die;
     }
   }
+
+  $data['message'] = $message;
+  $data['username'] = $username;
+  $data['password'] = $password;
+
+
   return $data;
 }
 
@@ -44,14 +50,16 @@ extract(pageController());
     <![endif]-->
   </head>
   <body>
-    <form class="" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" value="">
-      <label for="password">Password:</label>
-      <input type="password" name="password" value="">
-      <input type="submit">
-    </form>
-
+    <div class="container">
+      <p><strong><?= $message ?></strong></p>
+      <form class="" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="">
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="">
+        <input type="submit">
+      </form>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>

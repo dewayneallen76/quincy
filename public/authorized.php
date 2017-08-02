@@ -1,11 +1,25 @@
 <?php
 session_start();
 
-if($_SESSION['logged_in_user'] != 'guest') {
-  header("Location: /login.php");
-  die;
+function pageController() {
+
+  $data = [];
+  $message = "";
+
+  if($_SESSION['logged_in_user'] != 'guest') {
+    header("Location: /login.php");
+    die;
+  } else {
+    $message = "Welcome " . $_SESSION['logged_in_user'] . "!";
+  }
+
+  $data['message'] = $message;
+
+  return $data;
+
 }
 
+extract(pageController());
  ?>
 
 <!DOCTYPE html>
@@ -25,10 +39,11 @@ if($_SESSION['logged_in_user'] != 'guest') {
     <![endif]-->
   </head>
   <body>
-
-    <h1>AUTHORIZED</h1>
-    <h1>Welcome <?= $_SESSION['logged_in_user']; ?></h1>
-    <a class="btn btn-primary" href="/logout.php">Logout</a>
+    <div class="container">
+      <h1>AUTHORIZED</h1>
+      <p><?= $message; ?></p>
+      <a class="btn btn-primary" href="/logout.php">Logout</a>  
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
