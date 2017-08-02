@@ -79,6 +79,7 @@ function pageController($allMovies)
     // If $_GET['genre'] holds 'adventure', make $movies hold movies with 'adventure' as a genre.
     if(isset($_GET['release'])) {
       
+
     }
 
     if(isset($_GET['genre'])) {
@@ -133,7 +134,7 @@ extract(pageController($allMovies));
 
         <section class="links">
             <!-- Add a link that will show all movies  -->
-            <a href="movies.php?">Show all movies</a>
+            <a href="movies.php">Show all movies</a>
 
             <!-- Add a link that will show only movies with a release date after 2000 -->
             <a href="movies.php?release=<2000">All movies released after 2000</a>
