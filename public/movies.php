@@ -78,9 +78,17 @@ function pageController($allMovies)
 
     // If $_GET['genre'] holds 'adventure', make $movies hold movies with 'adventure' as a genre.
     if(isset($_GET['release'])) {
-      
 
+      $movies = [];
+      foreach($allMovies as $movie) {
+        if($movie['release'] > 2000) {
+          $movies[] = $movie;
+        }
+      }
+      $data['movies'] = $movies;
+      var_dump($data);
     }
+
 
     if(isset($_GET['genre'])) {
         // make a new array called $movies
