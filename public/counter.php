@@ -1,6 +1,7 @@
 <?php
 
-function pageController() {
+function pageController()
+{
   if(isset($_GET['direction']) && isset($_GET['count'])) {
     $count = $_GET['count'];
     $direction = $_GET['direction'];
@@ -13,7 +14,10 @@ function pageController() {
     $count = $_GET['count'] = 0;
     $direction = $_GET['direction'] = 'START';
   }
-  return [ 'count' => $count, 'direction' => $direction];
+  return [
+    'count' => $count,
+    'direction' => $direction
+  ];
 }
 
 var_dump($_GET);
