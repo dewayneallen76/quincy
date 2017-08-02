@@ -22,11 +22,11 @@ function pageController() {
     }
   }
 
-  $data['message'] = $message;
-  $data['username'] = $username;
-  $data['password'] = $password;
-
-
+  $data = [
+    'message' => $message,
+    'username' => $username,
+    'password' => $password
+  ];
   return $data;
 }
 
