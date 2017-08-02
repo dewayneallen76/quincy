@@ -1,16 +1,24 @@
 <?php
-var_dump($_POST);
+session_start();
+
 function pageController() {
   $data = [];
+  $message = "";
   $username = (isset($_POST['username'])) ? $_POST['username'] : '';
   $password = (isset($_POST['password'])) ? $_POST['password'] : '';
 
-  if(!empty($_POST) || !empty($_POST)) {
+  if(!empty($_POST)) {
     if($username == 'guest' && $password == 'password') {
+      $_SESSION['logged_in_user'] = $username;
+    } else {
+      $message = "Login failed. Try again.";
+    }
+  }
+
+  if(!empty($_SESSION)) {
+    if($_SESSION['logged_in_user'] == 'guest') {
       header("Location: /authorized.php");
       die;
-    } else {
-      die ("Login failed");
     }
   }
   return $data;

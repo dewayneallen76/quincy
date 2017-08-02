@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if($_SESSION['logged_in_user'] != 'guest') {
+  header("Location: /login.php");
+  die;
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +27,8 @@
   <body>
 
     <h1>AUTHORIZED</h1>
+    <h1>Welcome <?= $_SESSION['logged_in_user']; ?></h1>
+    <a class="btn btn-primary" href="/logout.php">Logout</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
