@@ -10,15 +10,10 @@ function pageController() {
   if(!empty($_POST)) {
     if($username == 'guest' && $password == 'password') {
       $_SESSION['logged_in_user'] = $username;
+      header("Location: /authorized.php");
+      die();
     } else {
       $message = "Login failed. Try again.";
-    }
-  }
-
-  if(!empty($_SESSION)) {
-    if($_SESSION['logged_in_user'] == 'guest') {
-      header("Location: /authorized.php");
-      die;
     }
   }
 
