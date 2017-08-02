@@ -65,13 +65,17 @@ $allMovies = [
     ]
 ];
 
+
 function pageController($allMovies)
 {
     $data = [];
     var_dump($_GET);
 
     // If the $_GET request is empty, show every movie
-
+    if(!isset($_GET)) {
+      $data['movies'] = $allMovies;
+    }
+    
     // If $_GET['genre'] holds 'adventure', make $movies hold movies with 'adventure' as a genre.
 
     if(isset($_GET['genre'])) {
@@ -116,20 +120,23 @@ extract(pageController($allMovies));
         <section class="form">
             <form>
                 <!-- Add an input to search by "title" -->
+                <input type="text" name="title" value="title">
                 <!-- Add a form that has an input for "genre" -->
+                <input type="text" name="genre" value="genre">
                 <!-- Add submit button -->
+                <button type="button" name="button">Submit</button>
             </form>
         </section>
 
         <section class="links">
             <!-- Add a link that will show all movies  -->
-            <a href="">Show all movies</a>
+            <a href="movies.php?">Show all movies</a>
 
             <!-- Add a link that will show only movies with a release date after 2000 -->
-            <a href="">All movies released after 2000</a>
+            <a href="movies.php?release=<2000">All movies released after 2000</a>
 
             <!-- Add a link that shows all movies w/ the comedy genre -->
-            <a href="">Show only comedies</a>
+            <a href="movies.php?genre=comedy">Show only comedies</a>
 
             <!-- Add a link that shows all movies w/ the sci-fi genre -->
             <a href="movies.php?genre=sci-fi">Show all Sci-Fi movies</a>
