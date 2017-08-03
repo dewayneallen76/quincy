@@ -86,7 +86,7 @@ function pageController($allMovies)
         }
       }
       $data['movies'] = $movies;
-      var_dump($data);
+      return $data;
     }
 
 
@@ -130,13 +130,13 @@ extract(pageController($allMovies));
         <h1>Welcome to MovieLister!</h1>
 
         <section class="form">
-            <form>
+            <form method="GET" action="movies.php">
                 <!-- Add an input to search by "title" -->
                 <input type="text" name="title" value="title">
                 <!-- Add a form that has an input for "genre" -->
                 <input type="text" name="genre" value="genre">
                 <!-- Add submit button -->
-                <button type="button" name="button">Submit</button>
+                <button type="button" name="button">Search</button>
             </form>
         </section>
 
