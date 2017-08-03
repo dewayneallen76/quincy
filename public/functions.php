@@ -1,15 +1,13 @@
 <?php
 
-function inputHas($key) {
-  if(isset($_REQUEST[$key])) {
-    return true;
-  } else {
-    return false;
-  }
+function inputHas($key)
+{
+  return isset($_REQUEST[$key]);
 }
 
-function inputGet($key) {
-  if(inputHas($key) == true) {
+function inputGet($key)
+{
+  if(inputHas($key)) {
     return $_REQUEST[$key];
   } else {
     return null;
