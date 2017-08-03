@@ -1,11 +1,13 @@
 <?php
 session_start();
 
+require 'functions.php';
+
 function pageController() {
   $data = [];
   $message = "";
-  $username = (isset($_POST['username'])) ? $_POST['username'] : '';
-  $password = (isset($_POST['password'])) ? $_POST['password'] : '';
+  $username = inputHas('username') ? inputGet('username') : '';
+  $password = inputHas('password') ? escape(inputGet('password')) : '';
 
   if(!empty($_POST)) {
     if($username == 'guest' && $password == 'password') {
