@@ -112,6 +112,18 @@ function pageController($allMovies)
         $data['movies'] = $allMovies;
     }
 
+    if(!empty($_GET['title']) && empty($_GET['genre'])) {
+
+      $movies = [];
+      foreach($allMovies as $movie) {
+        if(stripos($movie['title'], $_GET['title']) !== false) {
+          $movies[] = $movie;
+        }
+      }
+      $data['movies'] = $movies;
+      return $data;
+    }
+
     return $data;
 }
 
@@ -132,11 +144,11 @@ extract(pageController($allMovies));
         <section class="form">
             <form method="GET" action="movies.php">
                 <!-- Add an input to search by "title" -->
-                <input type="text" name="title" value="title">
+                <input type="text" name="title" id="title">
                 <!-- Add a form that has an input for "genre" -->
-                <input type="text" name="genre" value="genre">
+                <input type="text" name="genre" id="genre">
                 <!-- Add submit button -->
-                <button type="button" name="button">Search</button>
+                <button type="submit">Search</button>
             </form>
         </section>
 
@@ -145,7 +157,7 @@ extract(pageController($allMovies));
             <a href="movies.php">Show all movies</a>
 
             <!-- Add a link that will show only movies with a release date after 2000 -->
-            <a href="movies.php?release=<2000">All movies released after 2000</a>
+            <a href="movies.php?release=>2000">All movies released after 2000</a>
 
             <!-- Add a link that shows all movies w/ the comedy genre -->
             <a href="movies.php?genre=comedy">Show only comedies</a>
