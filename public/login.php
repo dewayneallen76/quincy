@@ -2,20 +2,27 @@
 session_start();
 
 require 'functions.php';
+require_once '../Auth.php';
+require_once '../Input.php';
 
 function pageController() {
   $data = [];
+
+  if(Auth::check()) {
+    header("Location: /authorized.php");
+    die();
+  }
+
   $message = "";
-  $username = inputHas('username') ? inputGet('username') : '';
-  $password = inputHas('password') ? escape(inputGet('password')) : '';
+  $username = Input::get('username');
+  $password = Input::get('password');
 
   if(!empty($_POST)) {
-    if($username == 'guest' && $password == 'password') {
-      $_SESSION['logged_in_user'] = $username;
-      header("Location: /authorized.php");
+    if(Auth::attempt($username, $password)) {
+      header("Location: authorized.php");
       die();
     } else {
-      $message = "Login failed. Try again.";
+      $message = "Invalid Login";
     }
   }
 
