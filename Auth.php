@@ -1,5 +1,5 @@
 <?php
-
+require_once "Log.php";
 /**
  * A utility class for handling common authorization tasks
  */
@@ -23,16 +23,27 @@ class Auth
      * @param string $username the username to check
      * @param string $password the password to check
      */
+
     public static function attempt($username, $password)
     {
-        // TODO: check if the passed username matches the static username
-        //       property
-        // TODO: use the `password_verify` function to check if the passed
-        //       password matches the static password property
-        // TODO: create an instance of the Log class to log a message of whether
-        //       or not the login attempt was successful or not
+      $log = new Log();
+      // TODO: check if the passed username matches the static username
+      //       property
+      // TODO: use the `password_verify` function to check if the passed
+      //       password matches the static password property
+      if($username == self::username && password_verify($password, self::password)) {
         // TODO: if the username and password match, set the 'LOGGED_IN_USER'
         //       key in the session to the passed username
+        $_SESSION['logged_in_user'] = $username;
+        // TODO: create an instance of the Log class to log a message of whether
+        //       or not the login attempt was successful or not
+        $log->info("$username logged in successfully.");
+        return true;
+      } else {
+        $log->error("$username failed to log in.");
+        return false;
+      }
+
     }
 
     /**
@@ -44,6 +55,7 @@ class Auth
     {
         // TODO: return a boolean value based on whether or not the
         //       'LOGGED_IN_USER' key is present in the session
+        return isset($_SESSION['logged_in_user']);
     }
 
     /**
@@ -55,6 +67,11 @@ class Auth
     {
         // TODO: return the value associated with the 'LOGGED_IN_USER' key in
         //       the session, or null if it is not set
+        if(isset($_SESSION['logged_in_user'])) {
+          return $_SESSION['logged_in_user'];
+        } else {
+          return null;
+        }
     }
 
     /**
@@ -63,5 +80,17 @@ class Auth
     public static function logout()
     {
         // TODO: destroy and re-create the session
+      // clear $_SESSION array
+      session_unset();
+
+      // delete session data on the server
+      session_destroy();
+
+      // ensure client is sent a new session coookie
+      session_regenerate_id();
+
+      // start a new session - session_destroy() ended our previous session so
+      // if we want to store any new data in $_SESSION we must start a new one.
+      session_start();
     }
 }
