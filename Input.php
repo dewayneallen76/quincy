@@ -25,7 +25,21 @@ class Input
     public static function get($key, $default = null)
     {
         // TODO: Fill in this function
-        return isset($_REQUEST['key'] == true ? $_REQUEST['key'] : null );
+        if(self::has($key)) {
+          return $_REQUEST[$key];
+        } else {
+          return $default;
+        }
+    }
+
+    public static function getNumeric($key, $default = 0)
+    {
+      $value = self::get($key, $default);
+
+      if(!is_numeric($value)) {
+        return "must be numeric";
+      }
+      return $value;
     }
 
     ///////////////////////////////////////////////////////////////////////////
