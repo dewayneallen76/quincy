@@ -11,7 +11,7 @@ class Input
     public static function has($key)
     {
         // TODO: Fill in this function
-        return isset($_REQUEST['key']);
+        return isset($_REQUEST[$key]);
 
     }
 

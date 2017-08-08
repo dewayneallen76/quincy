@@ -5,7 +5,6 @@ require_once "../Auth.php";
 function pageController() {
 
   $data = [];
-  $message = "";
 
   if(!Auth::check()) {
     header("Location: /login.php");
@@ -40,7 +39,7 @@ extract(pageController());
   <body>
     <div class="container">
       <h1>AUTHORIZED</h1>
-      <p><?= $message; ?></p>
+      <p><?= "Welcome $username"; ?></p>
       <a class="btn btn-primary" href="/logout.php">Logout</a>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
