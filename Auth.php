@@ -31,7 +31,7 @@ class Auth
       //       property
       // TODO: use the `password_verify` function to check if the passed
       //       password matches the static password property
-      if($username == self::username && password_verify($password, self::password)) {
+      if($username == self::$username && password_verify($password, self::$password)) {
         // TODO: if the username and password match, set the 'LOGGED_IN_USER'
         //       key in the session to the passed username
         $_SESSION['logged_in_user'] = $username;
