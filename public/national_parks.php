@@ -15,7 +15,12 @@ function getPaginatedParks($dbc, $page, $limit)
 {
   $offset = ($page - 1) * $limit;
 
-  $stmt = $dbc->query("SELECT * FROM national_parks LIMIT $limit OFFSET $offset");
+  $stmt = $dbc->prepare("SELECT * FROM national_parks LIMIT :limit OFFSET :offset");
+
+  $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+  $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+  $stmt->execute();
+
   return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 

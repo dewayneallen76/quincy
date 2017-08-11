@@ -18,9 +18,16 @@ $parks = array_map('trim', $parks);
 
 foreach($parks as $park) {
   $park = explode(',', $park);
-  $seedParksTable = "INSERT INTO national_parks (name, location, date_established, area_in_acres) VALUES ('{$park[0]}', '{$park[1]}', '{$park[2]}', '{$park[3]}')";
+  $seedParksTable = "INSERT INTO national_parks (name, location, date_established, area_in_acres) VALUES (:name, :location, :date_established, :area_in_acres)";
 
-  $dbc->exec($seedParksTable);
+  $stmt = $dbc->prepare($seedParksTable);
+
+  $stmt->bindValue(':name', $park[0], PDO::PARAM_STR);
+  $stmt->bindValue(':location', $park[1], PDO::PARAM_STR);
+  $stmt->bindValue(':date_established', $park[2], PDO::PARAM_STR);
+  $stmt->bindValue(':area_in_acres', $park[3], PDO::PARAM_STR);
+
+  $stmt->execute();
 }
 
 
