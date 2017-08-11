@@ -72,7 +72,7 @@ extract(pageController($dbc));
   </head>
   <body>
     <div class="container">
-      <table class="table-striped table-hover table-bordered">
+      <table class="table table-striped table-hover table-bordered table-responsive">
         <h1>National Parks</h1>
         <thead>
           <th>Name</th>
