@@ -4,6 +4,7 @@ require_once './../db_connect.php';
 
 function getParks($dbc)
 {
+  $limit = 4;
   $stmt = $dbc->query("SELECT * FROM national_parks");
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   return $rows;
@@ -31,7 +32,7 @@ $parks = getParks($dbc);
   </head>
   <body>
     <div class="container">
-      <table class="table-striped table-hover">
+      <table class="table-striped table-hover table-bordered">
         <h1>National Parks</h1>
         <thead>
           <th>Name</th>
@@ -50,6 +51,8 @@ $parks = getParks($dbc);
           <?php endforeach; ?>
         </tbody>
       </table>
+      <a href="national_parks.php?page=">< Prev</a>
+      <a href="national_parks.php?page=">Next ></a>
     </div>
 
 
