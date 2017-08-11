@@ -1,7 +1,7 @@
 <?php
 
-require_once './../db_connect.php';
-require_once './../Input.php';
+require_once __DIR__ . './../db_connect.php';
+require_once __DIR__ . './../Input.php';
 
 function getLastPage($dbc, $limit)
 {
