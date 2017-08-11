@@ -3,7 +3,8 @@
 require_once './../db_connect.php';
 require_once './../Input.php';
 
-function getLastPage($dbc, $limit) {
+function getLastPage($dbc, $limit)
+{
   $stmt = $dbc->query("SELECT COUNT(*) FROM national_parks");
   $count = $stmt->fetch()[0];
   $lastPage = ceil($count / $limit);
