@@ -99,6 +99,22 @@ extract(pageController($dbc));
       </table>
       <a <?php if ($page <= 1): ?>style="color: grey;"<?php endif; ?> href="/national_parks.php?page=<?=$page-1?>">Previous</a>
       <a <?php if ($page >= $lastPage): ?>style="color: grey;"<?php endif; ?> class="pull-right" href="/national_parks.php?page=<?=$page+1?>">Next</a>
+      <br>
+      <h2>Enter a new park</h2>
+      <div class="form-group">
+        <form class="" action="national_parks.php?page=<?= $lastPage ?>" method="post">
+          <label for="name">Park Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter park name">
+          <label for="name">Location:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter location">
+          <label for="name">Date Established:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter date established">
+          <label for="name">Area in acres:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter area in acres">
+          <br>
+          <button class="btn btn-default" type="submit" name="button">Submit</button>
+        </form>
+      </div>
     </div>
 
 
