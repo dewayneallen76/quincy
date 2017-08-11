@@ -30,24 +30,27 @@ $parks = getParks($dbc);
     <![endif]-->
   </head>
   <body>
-    <table class="table-striped table-hover">
-      <thead>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Date Established</th>
-        <th>Area In Acres</th>
-      </thead>
-      <tbody>
-        <?php foreach($parks as $park): ?>
-        <tr>
-          <td><?= $park['name']; ?></td>
-          <td><?= $park['location']; ?></td>
-          <td><?= $park['date_established']; ?></td>
-          <td><?= $park['area_in_acres']; ?></td>
-        </tr>
-      <?php endforeach; ?>
-      </tbody>
-    </table>
+    <div class="container">
+      <table class="table-striped table-hover">
+        <h1>National Parks</h1>
+        <thead>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Date Established</th>
+          <th>Area In Acres</th>
+        </thead>
+        <tbody>
+          <?php foreach($parks as $park): ?>
+            <tr>
+              <td><?= $park['name']; ?></td>
+              <td><?= $park['location']; ?></td>
+              <td><?= $park['date_established']; ?></td>
+              <td><?= $park['area_in_acres']; ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
