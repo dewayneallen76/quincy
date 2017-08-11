@@ -14,7 +14,7 @@ Channel Islands,California,1980-03-05,249561.00
 Congaree,South Carolina,2003-11-10,26545.86
 Crater Lake,Oregon,1902-05-22,183224.05
 Cuyahoga Valley,Ohio,2000-10-11,32860.73
-Death Valley,"California, Nevada",1994-10-31,3372401.96
+Death Valley,"California/Nevada",1994-10-31,3372401.96
 Denali,Alaska,1917-02-26,4740911.72
 Dry Tortugas,Florida,1992-10-26,64701.22
 Everglades,Florida,1934-05-30,1508537.90
@@ -25,7 +25,7 @@ Grand Canyon,Arizona,1919-02-26,1217403.32
 Grand Teton,Wyoming,1929-02-26,309994.66
 Great Basin,Nevada,1986-10-27,77180.00
 Great Sand Dunes,Colorado,2004-09-13,42983.74
-Great Smoky Mountains,"North Carolina, Tennessee",1934-06-15,521490.13
+Great Smoky Mountains,"North Carolina/Tennessee",1934-06-15,521490.13
 Guadalupe Mountains,Texas,1966-10-15,86415.97
 Haleakalā,Hawaii,1916-08-01,29093.67
 Hawaii Volcanoes,Hawaii,1916-08-01,323431.38
@@ -55,6 +55,6 @@ Virgin Islands,United States Virgin Islands,1956-08-02,14688.87
 Voyageurs,Minnesota,1971-01-08,218200.17
 Wind Cave,South Dakota,1903-01-09,28295.03
 Wrangell–​St. Elias,Alaska,1980-12-02,8323147.59
-Yellowstone,"Wyoming, Montana, Idaho",1872-03-01,2219790.71
+Yellowstone,"Wyoming/Montana/Idaho",1872-03-01,2219790.71
 Yosemite,California,1890-10-01,761266.19
 Zion,Utah,1919-11-19,146597.60
