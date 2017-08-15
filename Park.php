@@ -153,5 +153,20 @@ class Park
         //       the prepared statement
         // TODO: excute the statement and set the $id property of this object to
         //       the newly created id
+
+      self::dbConnect();
+      $insertQuery = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)";
+
+      $stmt = self::$dbc->prepare($insertQuery);
+
+      $stmt->bindValue(":name", $this->name, PDO::PARAM_STR);
+      $stmt->bindValue(":location", $this->location, PDO::PARAM_STR);
+      $stmt->bindValue(":date_established", $this->dateEstablished, PDO::PARAM_STR);
+      $stmt->bindValue(":area_in_acres", $this->areaInAcres, PDO::PARAM_STR);
+      $stmt->bindValue(":description", $this->description, PDO::PARAM_STR);
+
+      $stmt->execute();
+
+      $this->id = self::$dbc->lastInsertId();
     }
 }
