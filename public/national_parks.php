@@ -1,27 +1,13 @@
 <?php
 
-require_once __DIR__ . './../db_connect.php';
+require_once __DIR__ . './../Park.php';
 require_once __DIR__ . './../Input.php';
 
-function getLastPage($dbc, $limit)
+function getLastPage($limit)
 {
-  $stmt = $dbc->query("SELECT COUNT(*) FROM national_parks");
-  $count = $stmt->fetch()[0];
+  $count = Park::count();
   $lastPage = ceil($count / $limit);
   return $lastPage;
-}
-
-function getPaginatedParks($dbc, $page, $limit)
-{
-  $offset = ($page - 1) * $limit;
-
-  $stmt = $dbc->prepare("SELECT * FROM national_parks LIMIT :limit OFFSET :offset");
-
-  $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-  $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
-  $stmt->execute();
-
-  return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function handleOutOfRangeRequests($page, $lastPage)
@@ -36,27 +22,56 @@ function handleOutOfRangeRequests($page, $lastPage)
 	}
 }
 
+function addPark()
+{
+  $name = htmlspecialchars(strip_tags(Input::get('name')));
+  $location = htmlspecialchars(strip_tags(Input::get('location')));
+  $area_in_acres = htmlspecialchars(strip_tags(Input::get('area_in_acres')));
+  $date_established = htmlspecialchars(strip_tags(Input::get('date_established')));
+  $description = htmlspecialchars(strip_tags(Input::get('description')));
 
-function pageController($dbc)
+  $date_established = date('Y-m-d', strtotime($date_established));
+
+  if(!is_numeric($area_in_acres)) {
+    echo "Area in acres must be numeric";
+    return;
+  }
+
+  $park = new Park();
+  $park->name = $name;
+  $park->location = $location;
+  $park->areaInAcres = $area_in_acres;
+  $park->dateEstablished = $date_established;
+  $park->description = $description;
+
+  $park->insert();
+}
+
+
+function pageController()
 {
 
   $data = [];
 
+  if(!empty($_POST)) {
+    addPark();
+  }
+
   $limit = 4;
   $page = Input::get('page', 1);
 
-  $lastPage = getLastPage($dbc, $limit);
+  $lastPage = getLastPage($limit);
 
   handleOutOfRangeRequests($page, $lastPage);
 
-  $data['parks'] = getPaginatedParks($dbc, $page, $limit);
+  $data['parks'] = Park::paginate($page, $limit);
   $data['page'] = $page;
   $data['lastPage'] = $lastPage;
 
   return $data;
 }
 
-extract(pageController($dbc));
+extract(pageController());
 
  ?>
 
@@ -90,11 +105,11 @@ extract(pageController($dbc));
         <tbody>
           <?php foreach($parks as $park): ?>
             <tr>
-              <td><?= $park['name']; ?></td>
-              <td><?= $park['location']; ?></td>
-              <td><?= $park['date_established']; ?></td>
-              <td><?= $park['area_in_acres']; ?></td>
-              <td><?= $park['description'] ?></td>
+              <td><?= $park->name; ?></td>
+              <td><?= $park->location; ?></td>
+              <td><?= $park->date_established; ?></td>
+              <td><?= $park->area_in_acres; ?></td>
+              <td><?= $park->description ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
@@ -104,15 +119,17 @@ extract(pageController($dbc));
       <br>
       <h2>Enter a new park</h2>
       <div class="form-group">
-        <form class="" action="national_parks.php?page=<?= $lastPage ?>" method="post">
+        <form action="national_parks.php" method="POST">
           <label for="name">Park Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter park name">
+          <input type="text" class="form-control" name="name" id="name" placeholder="Enter park name">
           <label for="name">Location:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter location">
+          <input type="text" class="form-control" name="location" id="location" placeholder="Enter location">
           <label for="name">Date Established:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter date established">
+          <input type="date" class="form-control" name="date_established" id="date_established" placeholder="Enter date established">
           <label for="name">Area in acres:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter area in acres">
+          <input type="text" class="form-control" name="area_in_acres" id="area_in_acres" placeholder="Enter area in acres">
+          <label for="name">Park description: </label>
+          <input type="text" class="form-control" name="description" id="description" placeholder="Enter area in acres">
           <br>
           <button class="btn btn-default" type="submit" name="button">Submit</button>
         </form>
