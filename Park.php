@@ -155,6 +155,7 @@ class Park
         //       the newly created id
 
       self::dbConnect();
+      
       $insertQuery = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)";
 
       $stmt = self::$dbc->prepare($insertQuery);
