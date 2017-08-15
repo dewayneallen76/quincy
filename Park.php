@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A Class for interacting with the national_parks database table
  *
@@ -45,10 +44,12 @@ class Park
      * establish a database connection if we do not have one
      */
     public static function dbConnect() {
+        require 'db_connect.php';
+
         if (! is_null(self::$dbc)) {
             return;
         }
-        self::$dbc = require 'db_connect.php';
+        self::$dbc = $dbc;
     }
 
     /**
@@ -60,7 +61,7 @@ class Park
         //       number of existing park records
 
         self::dbConnect();
-        $stmt = self::$dbc->query("SELECT COUNT(id) FROM national_parks");
+        $stmt = self::$dbc->query("SELECT COUNT(*) FROM national_parks");
         $count = $stmt->fetch(PDO::FETCH_NUM);
 
         return $count[0];
