@@ -79,11 +79,25 @@ class Park
         // TODO: return an array of Park objects
 
         self::dbConnect();
+
         $select = "SELECT * FROM national_parks";
         $stmt = self::$dbc->query($select);
+
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        var_dump($results);
+        $parks = [];
+        foreach($results as $result) {
+          $park = new Park();
+          $park->id = $result['id'];
+          $park->name = $result['name'];
+          $park->location = $result['location'];
+          $park->areaInAcres = $result['area_in_acres'];
+          $park->dateEstablished = $result['date_established'];
+          $park->description = $result['description'];
+
+          $parks[] = $park;
+        }
+      return $parks;
     }
 
     /**
@@ -96,6 +110,22 @@ class Park
         // TODO: use the $dbc static property to query the database with the
         //       calculated limit and offset
         // TODO: return an array of the found Park objects
+
+      self::dbConnect();
+      $limit = $resultsPerPage;
+      $offset = ($pageNo * $resultsPerPage) - $resultsPerPage;
+
+      $paginateQuery = "SELECT * FROM national_parks ORDER BY name LIMIT :limit OFFSET :offset";
+
+      $preparedStmt = self::$dbc->prepare($paginateQuery);
+
+      $preparedStmt->bindValue(":limit", (int) $limit, PDO::PARAM_INT);
+      $preparedStmt->bindValue(":offset", (int) $offset, PDO::PARAM_INT);
+
+      $preparedStmt->execute();
+
+      return $preparedStmt->fetchAll(PDO::FETCH_OBJ);
+
     }
 
     /////////////////////////////////////
