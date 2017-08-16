@@ -42,6 +42,16 @@ class Input
       return $value;
     }
 
+    public static function getString($key)
+    {
+
+    }
+
+    public static function getNumber($key)
+    {
+
+    }
+    
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //
