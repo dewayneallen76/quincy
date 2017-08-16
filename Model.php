@@ -1,7 +1,10 @@
 <?php
 
+require_once 'User.php';
+
 class Model
 {
+  protected static $table = 'database name';
 
   private $attributes = [];
 
@@ -15,13 +18,12 @@ class Model
   public function __set($name, $value) {
     $this->attributes[$name] = $value;
   }
+
+  public static function getTableName()
+  {
+    return static::$table;
+  }
 }
 
-$test = new Model;
-$test->name = 'Dewayne';
-$test->phone = '8675309';
-$test->email = 'dewayne@here.com';
-
-var_dump($test);
 
  ?>
