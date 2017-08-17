@@ -42,6 +42,8 @@ class Park
      */
     public static $dbc = null;
 
+    public static $table = 'national_parks';
+
     /**
      * establish a database connection if we do not have one
      */
