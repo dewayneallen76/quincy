@@ -82,22 +82,6 @@ abstract class Model
 
     }
 
-    public static function find($id)
-    {
-      self::dbConnect();
-      $query = "SELECT * FROM " . static::table . "WHERE id = :id";
-      $stmt = self::$dbc->prepare($query);
-
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-
-      $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      $park = new Park($result);
-
-      return $park;
-    }
-
     /**
      * Insert new entry into database
      *

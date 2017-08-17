@@ -174,4 +174,47 @@ class Park
 
       $this->id = self::$dbc->lastInsertId();
     }
+
+    public static function find($id)
+    {
+      self::dbConnect();
+      $query = "SELECT * FROM " . static::$table . "WHERE id = :id";
+      $stmt = self::$dbc->prepare($query);
+
+      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      $stmt->execute();
+
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      $park = new Park($result);
+
+      return $park;
+    }
+
+    protected function update()
+    {
+      self::dbConnect();
+
+      $update = "UPDATE " . static::$table . " SET
+        name = :name,
+        location = :location,
+        area_in_acres = :area_in_acres,
+        date_established = :date_established,
+        description = :description
+        WHERE id = :id";
+
+      $stmt = self::$dbc->prepare($update);
+
+      $stmt->bindValue(":name", $this->name, PDO::PARAM_STR);
+      $stmt->bindValue(":location", $this->location, PDO::PARAM_STR);
+      $stmt->bindValue(":date_established", $this->dateEstablished, PDO::PARAM_STR);
+      $stmt->bindValue(":area_in_acres", $this->areaInAcres, PDO::PARAM_STR);
+      $stmt->bindValue(":description", $this->description, PDO::PARAM_STR);
+      $stmt->bindValue(":id", $this->id, PDO::PARAM_INT);
+
+      $stmt->execute();
+
+    }
+
+
 }
