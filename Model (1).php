@@ -70,9 +70,16 @@ abstract class Model
     /** Store the object in the database */
     public function save()
     {
-        // @TODO: Ensure there are values in the attributes array before attempting to save
-
+      // @TODO: Ensure there are values in the attributes array before attempting to save
+      if(!empty($this->attributes)) {
         // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
+        if(isset($this->attributes['id'])) {
+          $this->update();
+        } else {
+          $this->insert();
+        }
+      }
+
     }
 
     /**
