@@ -1,4 +1,6 @@
 <?php
+
+// require_once 'ModelPark.php';
 /**
  * A Class for interacting with the national_parks database table
  *
@@ -28,7 +30,7 @@
  *      $park->insert();
  *
  */
-class Park
+class Park 
 {
 
     ///////////////////////////////////
@@ -155,7 +157,7 @@ class Park
         //       the newly created id
 
       self::dbConnect();
-      
+
       $insertQuery = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)";
 
       $stmt = self::$dbc->prepare($insertQuery);
