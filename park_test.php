@@ -6,7 +6,6 @@ Park::dbConnect();
 
 var_dump(Park::$dbc);
 
-echo "there are" . Park::count() . " parks";
+Model::find($id)
 
-print_r(Park::all());
  ?>
