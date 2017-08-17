@@ -44,14 +44,26 @@ class Input
 
     public static function getString($key)
     {
-
+      $input = self::get($key);
+      if(!is_numeric($input)) {
+        throw new Exception("Must be a number");
+      } else if (empty($input)) {
+        throw new Exception("Cannot be input");
+      }
+      return $input;
     }
 
     public static function getNumber($key)
     {
-
+      $input = self::get($key);
+      if(gettype($input) != 'string') {
+        throw new Exception("Must be a string");
+      } else if(empty($input)) {
+        throw new Exception("Cannot be empty");
+      }
+      return $input;
     }
-    
+
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //
