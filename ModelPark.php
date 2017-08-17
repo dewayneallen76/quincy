@@ -90,8 +90,9 @@ abstract class Model
       $stmt = self::$dbc->prepare($delete);
 
       $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+
       $stmt->execute();
-      
+
     }
 
     /**
