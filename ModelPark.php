@@ -82,6 +82,18 @@ abstract class Model
 
     }
 
+    public function delete()
+    {
+      self::dbConnect();
+      $delete = "DELETE FROM " .static::$table . "WHERE id = :id";
+
+      $stmt = self::$dbc->prepare($delete);
+
+      $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+      $stmt->execute();
+      
+    }
+
     /**
      * Insert new entry into database
      *

@@ -166,8 +166,8 @@ class Park
 
       $stmt->bindValue(":name", $this->name, PDO::PARAM_STR);
       $stmt->bindValue(":location", $this->location, PDO::PARAM_STR);
-      $stmt->bindValue(":date_established", $this->dateEstablished, PDO::PARAM_STR);
-      $stmt->bindValue(":area_in_acres", $this->areaInAcres, PDO::PARAM_STR);
+      $stmt->bindValue(":date_established", $this->date_established, PDO::PARAM_STR);
+      $stmt->bindValue(":area_in_acres", $this->area_in_acres, PDO::PARAM_STR);
       $stmt->bindValue(":description", $this->description, PDO::PARAM_STR);
 
       $stmt->execute();
@@ -207,14 +207,13 @@ class Park
 
       $stmt->bindValue(":name", $this->name, PDO::PARAM_STR);
       $stmt->bindValue(":location", $this->location, PDO::PARAM_STR);
-      $stmt->bindValue(":date_established", $this->dateEstablished, PDO::PARAM_STR);
-      $stmt->bindValue(":area_in_acres", $this->areaInAcres, PDO::PARAM_STR);
+      $stmt->bindValue(":date_established", $this->date_established, PDO::PARAM_STR);
+      $stmt->bindValue(":area_in_acres", $this->area_in_acres, PDO::PARAM_STR);
       $stmt->bindValue(":description", $this->description, PDO::PARAM_STR);
       $stmt->bindValue(":id", $this->id, PDO::PARAM_INT);
 
       $stmt->execute();
 
     }
-
 
 }
