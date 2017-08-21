@@ -49,9 +49,12 @@ users.push({
   languages
 });
 console.log(users);
+
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
+console.log(emails);
+console.log(names);
 
 // TODO: rewrite the following using arrow functions
 users.forEach(function(user) {
