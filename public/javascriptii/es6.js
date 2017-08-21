@@ -39,20 +39,19 @@ const name = 'Dewayne';
 const email = 'dewayne@mail.com';
 const languages = ['HTML', 'PHP'];
 
-name = 'Kristy';
 console.log(name);
 console.log(email);
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
-  name: name,
-  email: email,
-  languages: languages
+  name,
+  email,
+  languages
 });
-
+console.log(users);
 // TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+let emails = [];
+let names = [];
 
 // TODO: rewrite the following using arrow functions
 users.forEach(function(user) {
