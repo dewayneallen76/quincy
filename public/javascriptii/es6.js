@@ -1,4 +1,4 @@
-"use strict";
+
 console.log('connected');
 /*
  * Complete the TODO items below
