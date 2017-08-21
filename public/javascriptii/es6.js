@@ -39,6 +39,10 @@ const name = 'Dewayne';
 const email = 'dewayne@mail.com';
 const languages = ['HTML', 'PHP'];
 
+name = 'Kristy';
+console.log(name);
+console.log(email);
+
 // TODO: rewrite the object literal using object property shorthand
 users.push({
   name: name,
