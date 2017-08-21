@@ -60,9 +60,14 @@ console.log(names);
 users.forEach(function(user) {
   return emails.push(user.email);
 });
+// Using arrow function
+users.forEach = (user) => emails.push(user.email);
+
 users.forEach(function(user) {
   return names.push(user.name);
 });
+// Using arrow function
+users.forEach = (user) => names.push(user.name);
 
 // TODO: replace `var` with `let` in the following declaration
 var developers = [];
