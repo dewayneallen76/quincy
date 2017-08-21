@@ -1,3 +1,5 @@
+"use strict";
+console.log('connected');
 /*
  * Complete the TODO items below
  */
@@ -33,9 +35,9 @@ const users = [
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-var name = 'your_name_here';
-var email = '';
-var languages = [];
+var name = 'Dewayne';
+var email = 'dewayne@mail.com';
+var languages = ['HTML', 'PHP'];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
